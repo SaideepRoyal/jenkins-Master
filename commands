@@ -23,3 +23,33 @@ pwd
 cd .ssh/
 ls (open the publickey and paste it in jenkins-agent key)
 
+
+[open it on the browser]
+public ipv4 address:8080
+copy the unlock jenkins path 
+
+sudo cat paste the unlock jenkins path (you will get the password)
+
+[open Browser]
+paste the password to unlock jenkins
+install suggested plugins
+create admin user name & password (after entering the details save and finish)
+start using jenkins
+*goto manage jenkins-system config- Nodes
+Builtin nodes (no. of executors-0 )
+*goto manage jenkins-system config- Nodes
+New Node (N:Jenkins-Agent,Type:Permanent,Create,Description:Jenkins-Agent,No. of Executors:2,Remote root directory:/home/ubuntu,
+Label:Jenkins-Agent,usage:Use this node as much as possible,Launch method:Launch agents via SSH,
+Host:Copy the private ipv4 address of JenkinsAgent,Credentials:Add{kind:ssh username with private key,
+ID:Jenkins-Agent,Description:Jenkins-Agent,Username:ubuntu,privatekey:copy the privatekey from jenkins master and paste},
+Credentials:ubuntu,HostKey:non verifying verification strategy)+save
+Dashboard-New Item(test,pipeline,ok)(pipeline script:Hello world,Apply,Save)
+BuildNow (after build completion check consoleout if build sucessfull delete the test)
+ManageJenkins-Plugins-Availableplugins(click on MavenIntegretion,pipeline MavenIntegretion,Eclipsetemurin installer) press install.
+ManageJenkins-Tools(AddMaven-Name:Maven3,click Install automatically,Version:3.9.4)Apply & Save
+ManageJenkins-Tools(AddJDK-Name:Java17,click Install automatically,Add Installer:Install from adoptium.net,
+Version:jdk-17.0.5+8)Apply & save
+ManageJenkins-credentials under security-scoped to jenkins-domains:global(Add credentials-Username:SaideepRoyal,
+password:{github:settings-devloper settings-personal acess token-token classic or generate new token}paste,
+ID:github,Description:github)create
+goto Github account-registerapp repo-createfile:jenkinsfile(pipeline script)
