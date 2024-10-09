@@ -1,0 +1,13 @@
+sudo apt update
+sudo apt upgrade
+sudo nano /etc/hostname (change to Jenkins-Agent)
+sudo init 6
+
+sudo apt install openjdk-17-jre
+java -version
+sudo apt-get install docker.io
+sudo usermod -aG docker $USER
+sudo init 6
+
+sudo nano /etc/ssh/sshd_config ( remove # for pubkeyAuthentication yes ; authorizedkeysfile)
+sudo service sshd reload
