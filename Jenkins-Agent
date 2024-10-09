@@ -11,3 +11,8 @@ sudo init 6
 
 sudo nano /etc/ssh/sshd_config ( remove # for pubkeyAuthentication yes ; authorizedkeysfile)
 sudo service sshd reload
+
+pwd
+cd .ssh/
+ls (copy the jenkins master pubkey and paste it at authorizedkey)
+cat authorized_keys
