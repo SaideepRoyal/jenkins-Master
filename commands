@@ -5,7 +5,6 @@ sudo init 6
 
 sudo apt install openjdk-17-jre
 java -version
-
 (go to google search jenkins in aws at ubuntu copy the command at weekly release and run this in your local system)
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
